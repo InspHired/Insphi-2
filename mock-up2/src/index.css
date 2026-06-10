@@ -1,10 +1,69 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-cream: #FAF8F2;
-  --color-brand-dark: #0F172A;
+  --color-brand-cream: #FAF6EE;
+  --color-brand-teal: #5FA19C;
+  --color-brand-orange: #E07A5F;
+  --color-brand-dark-green: #2E6F6B;
+  --color-brand-yellow: #F2CC8F;
+  --color-brand-dark: #1E293B;
+  --color-brand-slate: #475569;
+  
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 body {
-  background-color: var(--color-brand-cream);
+  @apply font-inter bg-brand-cream text-brand-dark antialiased overflow-x-hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  @apply font-jakarta;
+}
+
+.logo {
+  @apply font-jakarta;
+}
+
+/* Custom Utilities based on Hero Graphic Style */
+.hero-bg-canvas {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #FAF6EE 0%, #F5EBE0 100%);
+  z-index: 1;
+}
+
+.hero-bg-canvas::before {
+  content: ''; position: absolute;
+  width: 100%; height: 100%;
+  background-image: radial-gradient(circle at 2px 2px, rgba(95, 161, 156, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-brand-teal;
+}
+
+.btn-primary {
+  @apply bg-brand-teal text-white px-8 py-4 rounded-full font-bold text-[0.92rem] shadow-lg hover:bg-brand-dark-green hover:shadow-brand-teal/20 transition-all;
+}
+
+.btn-secondary {
+  @apply bg-white text-brand-teal border border-brand-teal/20 px-8 py-4 rounded-full font-bold text-[0.92rem] hover:bg-brand-cream transition-all;
+}
+
+.backdrop-blob {
+  position: absolute; width: 55vw; height: 80%; top: 10%;
+  pointer-events: none; z-index: 1; opacity: 0.15;
+}
+
+.blob-teal {
+  right: -10vw; background: #5FA19C;
+  border-top-left-radius: 400px; border-bottom-left-radius: 400px;
+}
+
+.blob-orange {
+  left: -10vw; background: #E07A5F;
+  border-top-right-radius: 400px; border-bottom-right-radius: 400px;
 }
