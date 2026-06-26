@@ -54,6 +54,36 @@
     transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
       scale(0.8);
   }
+
+  .hero-container {
+  background-image: url('your-banner-image-path.png');
+  background-size: cover;
+  background-position: right center;
+  background-color: #fbf5e8; /* Matches the organic cream background */
+  display: flex;
+  align-items: center;
+  padding: 60px 10%;
+  min-height: 400px;
+}
+
+.hero-text-content {
+  max-width: 45%; /* Keeps text on the left, leaving room for the map/people graphics */
+}
+
+.btn-find-talent {
+  background: linear-gradient(to right, #6ba4a7, #538b8e);
+  border-radius: 50px;
+  color: white;
+  padding: 12px 24px;
+}
+
+.btn-available-jobs {
+  background: transparent;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 50px;
+  color: #1a1a1a;
+  padding: 12px 24px;
+}
 }
 
 #center {
